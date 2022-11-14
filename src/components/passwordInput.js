@@ -16,6 +16,7 @@ const PasswordInput = ({ register }) => {
       <Input
         id="password"
         type={isOpen ? "text" : "password"}
+        placeholder="Enter password"
         {...register("password", {
           required: "password is required",
           minLength: {
