@@ -7,8 +7,9 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { withTranslation } from "react-i18next";
 
-const PasswordInput = ({ register }) => {
+const PasswordInput = ({ register, t }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -16,11 +17,12 @@ const PasswordInput = ({ register }) => {
       <Input
         id="password"
         type={isOpen ? "text" : "password"}
+        placeholder={t("login.input.passwordPlaceholder")}
         {...register("password", {
-          required: "password is required",
+          required: t("login.errors.password"),
           minLength: {
             value: 6,
-            message: "password length should be at least 6 characters",
+            message: t("login.errors.passwordLength"),
           },
         })}
         isRequired
@@ -31,7 +33,7 @@ const PasswordInput = ({ register }) => {
           width="32px"
           onClick={onToggle}
           height="40px"
-          aria-label="toggle-password"
+          aria-label={t("login.input.toggle_password")}
           icon={
             isOpen ? (
               <ViewIcon size={18} color="#B8B8B8" />
@@ -51,4 +53,4 @@ const PasswordInput = ({ register }) => {
   );
 };
 
-export default PasswordInput;
+export default withTranslation()(PasswordInput);

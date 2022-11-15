@@ -1,0 +1,19 @@
+{
+    "login": {
+        "heading": "Connectez-vous à votre compte",
+        "submit": "connexion",
+        "input": {
+            "email": "E-mail",
+            "emailPlaceholder": "Espace réservé d'e-mail",
+            "password": "Mot de passe",
+            "passwordPlaceholder": "Espace réservé pour le mot de passe",
+            "toggle_password": "basculer le mot de passe"
+        },
+        "errors": {
+            "email": "L'e-mail est requis",
+            "password": "Mot de passe requis",
+            "passwordLength": "La longueur du mot de passe doit être d'au moins 6 caractères"
+        },
+        "forgot_password": "Mot de passe oublié"
+    }
+}

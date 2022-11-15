@@ -12,8 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import PasswordInput from "./passwordInput";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+  const { t } = useTranslation();
+
   const {
     handleSubmit,
     register,
@@ -38,21 +41,21 @@ const Login = () => {
         mb={10}
         textAlign="center"
       >
-        Login to your account
+        {t("login.heading")}
       </Heading>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box p={4}>
           <FormControl mb={6} isInvalid={errors.email}>
             <FormLabel htmlFor="email" color="#100B05" fontSize="14px">
-              Email
+              {t("login.input.email")}
             </FormLabel>
             <Input
               id="email"
               type="email"
-              placeholder="Enter email address"
+              placeholder={t("login.input.emailPlaceholder")}
               {...register("email", {
-                required: "email is required",
+                required: t("login.errors.email"),
               })}
               isRequired
             />
@@ -63,7 +66,7 @@ const Login = () => {
 
           <FormControl mb={2} isInvalid={errors.password}>
             <FormLabel htmlFor="password" color="#100B05" fontSize="14px">
-              Password
+              {t("login.input.password")}
             </FormLabel>
 
             <PasswordInput register={register} />
@@ -75,7 +78,7 @@ const Login = () => {
 
           <Flex justify="flex-end">
             <ChakraLink color="brand" fontSize="sm">
-              Forgot password?
+              {t("login.forgot_password")}
             </ChakraLink>
           </Flex>
 
@@ -86,7 +89,7 @@ const Login = () => {
             w="full"
             isLoading={isSubmitting}
           >
-            Login
+            {t("login.submit")}
           </Button>
         </Box>
       </form>

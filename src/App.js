@@ -1,14 +1,18 @@
 import {
   Center,
   ChakraProvider,
-  Container,
   Flex,
   Heading,
   Select,
 } from "@chakra-ui/react";
 import Login from "./components/login";
+import i18n, { handleChangeLanguage } from "./i18n";
+import "./i18n";
 
 function App() {
+  const handleSelectChange = (event) =>
+    handleChangeLanguage(event.target.value);
+
   return (
     <ChakraProvider>
       <Flex
@@ -22,7 +26,11 @@ function App() {
           Logo
         </Heading>
 
-        <Select width="150px">
+        <Select
+          width="150px"
+          defaultValue={i18n.language}
+          onChange={handleSelectChange}
+        >
           <option value="en">English</option>
           <option value="fr">French</option>
         </Select>

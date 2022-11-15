@@ -1,0 +1,19 @@
+{
+    "login": {
+        "heading": "Login to your account",
+        "submit": "Login",
+        "input": {
+            "email": "Email",
+            "emailPlaceholder": "Email Placeholder",
+            "password": "Password",
+            "passwordPlaceholder": "Password Placeholder",
+            "toggle_password": "Toggle Password"
+        },
+        "errors": {
+            "email": "Email is required",
+            "password": "Password is required",
+            "passwordLength": "Password length should be at least 6 characters"
+        },
+        "forgot_password": "Forgot Password"
+    }
+}
